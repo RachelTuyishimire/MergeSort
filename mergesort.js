@@ -2,61 +2,35 @@
 // let num = [45,12,6,89,2,5]
 // let target = 6
 
-// function merge(num, target){
-//     if (num.length <=1){
-//         return num
-//     }
-//     let middle = Math.floor(array.length/2)
-//     let left = num.slice(0, middle)
-//     let right = num.slice(middle)
-//     return merge(mergeSort(left), mergeSort(right));
-// } 
-// function merge(left, rigth){
-//     let num = [];
-//     while (left.length && right.length){
-//         if (left[0] < right[0]){
-//             num.push(left.shift())
-//         }
-//         else {
-//             num.push(right.shift())
-//         }
-//     }
-//     return num.concat(left.slice()).concat(right.slice()); 
-// }
-
-// let num = [45,12,6,89,2,5];
-// let target = 6;
-// console.log(merge(array))
-
 let num = [45,12,6,89,2,5]
   let target = 6;
-let firstIndex = 0;
-let lastIndex = num.length-1;
-let middleIndex = Math.floor((firstIndex+lastIndex)/2);
-while(num[middleIndex]!==firstIndex<=lastIndex){
-    console.log(middleIndex);
-    console.log(firstIndex);
-    console.log(lastIndex);
-    if(num[middleIndex]>6){
-        lastIndex=middleIndex-1;
+let left = 0;
+let right = num.length-1;
+let middle = Math.floor((left+right)/2);
+while(num[middle]!==left<=right){
+    console.log(middle);
+    console.log(left);
+    console.log(right);
+    if(num[middle]>6){
+        right=middle-1;
     }  else{
-        lastIndex=middleIndex+1;
+        right=middle+1;
     }
-    middleIndex=Math.floor((firstIndex+lastIndex)/2);{
+    middle=Math.floor((left+right)/2);{
     }
-    return num[middleIndex]===lastIndex-1;
+    return num[middle]===right-1;
     }
     //Given an unsorted array of numbers return the sorted array in descending order
     let arr=[123,89,5,23,9,56]
-    function descending (arr,merge){
-        let leftIndex = 0;
-        let rightIndex = length-1;
-        while(leftIndex.length&&rightIndex.length){
-            if(leftIndex [0]<rightIndex[0]);{
-            arr.push(leftIndex.shift());
+    function arrange (arr,merge){
+        let index1 = 0;
+        let index2 = length-1;
+        while(index1.length&&index2.length){
+            if(index1 [0]<index2[0]);{
+            arr.push(index1.shift());
         }
     }
-    return[...arr ,...leftIndex,...rightIndex];
+    return[...arr ,...index1,...index2];
     }
     function mergeSort(unsortedArray){
         const middleIndex = unsortedArray.length/2;
@@ -66,7 +40,7 @@ while(num[middleIndex]!==firstIndex<=lastIndex){
         const leftIndex = unsortedArray.splice(0,middleIndex);
         return mergeArrays(mergeSort(leftIndex)),mergeSort(unsortedArray);
     }
-    //
+    
     function mergeSort(arr) {
         if (arr.length <= 1) {
           return arr;
